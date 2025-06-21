@@ -3,6 +3,7 @@
 However, it should also be mentioned...
 there are some easter eggs that are going to be spoiled here :)
 """
+# plan to add a UI to this soon
 # Starting calorie count
 calories = 2000
 
@@ -26,8 +27,8 @@ calorie_values = {
     'definitely not a fake banana': 999999
 }
 
-# Interaction loop
-search_count = 0  # To keep track of how many times the player searches (for adding hints)
+# (you basically are gonna be asked the same question again and again until an ending is achieved)
+search_count = 0  # search count (for adding hints)
 
 while True:
     # Check if fridge is empty
@@ -35,7 +36,7 @@ while True:
         print("\nThe fridge is empty. You overate. You realise you wasted a minute and forty seconds in a virtual eating simulator, completely disconnected from all forms of reality whatsoever.\n\nBAD ENDING")
         break
 
-    # Ask if user wants to search
+    # ask the player for food
     question = input("\nThere are some things in the fridge.\nSearch the fridge?\nY: Yes ; N: No\n").strip().lower()
 
     if question == 'y':
@@ -43,10 +44,10 @@ while True:
         # Show only visible fridge items
         item = input(f"What do you want to search for? (Items available: {', '.join(fridge)})\n").strip().lower()
 
-        # Normalize item input
+        # adding the general items list
         all_items = fridge + secret_items
 
-        if item in all_items:
+        if item in all_items: # is your item specified in the list?
             print(f"Yes, {item} is in the fridge!")
             question2 = input(f"Do you want to eat the {item}? Y: Yes ; N: No\n").strip().lower()
             if question2 == 'y':
@@ -60,20 +61,20 @@ while True:
                 print(f"\nYou ate the {item}, which added {item_calories} kcal.")
                 print(f"Your total calories are now {calories} kcal.")
 
-                # Secret item handling and endings
-                if item == 'radioactive burger':
+                # ending finder
+                if item == 'radioactive burger': #radioactive burger ending
                     print("\nNOOO NOT THE RADIOACTIVE BURGER! ")
                     print("* You got the superpower. You've broken free from the repetition of the game.")
                     print("* ...?\n\nSPECIAL ENDING UNLOCKED ")
                     break  # End game
 
-                elif item == 'dog':
+                elif item == 'dog': #dog, confusion ending
                     print("\n...")
                     print("The dog ate YOU instead.")
                     print("CONFUSION ENDING UNLOCKED ")
                     break  # End game
 
-                elif item == 'definitely not a fake banana':
+                elif item == 'definitely not a fake banana': #potassium overdose ending
                     print("\n...\nPotassium.")
                     print("UNREALITY ENDING UNLOCKED ")
                     break  # End the game
@@ -83,7 +84,7 @@ while True:
             else:
                 print(f"\nYou didn't eat the {item}. Calories remain {calories} kcal.")
         else:
-            print(f"\nNo, {item} is not in the fridge.")
+            print(f"\nNo, {item} is not in the fridge.") #read the items list lol
 
         # Optional hint system
         if search_count == 3:
@@ -96,7 +97,7 @@ while True:
             print("You're stuck in a nuclear reactor with a cheeseburger...\n...I mean you're stuck in a pickle.")
 
     elif question == 'n':
-        print("\nYou left the fridge alone.\n\nGOOD ENDING ")
+        print("\nYou left the fridge alone.\n\nGOOD ENDING ") #impossible.
         break  # Exit loop if user says no
 
     else:
