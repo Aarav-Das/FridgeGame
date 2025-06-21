@@ -70,13 +70,13 @@ while True:
 
                 elif item == 'dog': #dog, confusion ending
                     print("\n...")
-                    print("The dog ate YOU instead.")
+                    print("The dog ate YOU instead. You realise that you've underestimated the true power (digestive capabilities) of all canines.")
                     print("CONFUSION ENDING UNLOCKED ")
                     break  # End game
 
                 elif item == 'definitely not a fake banana': #potassium overdose ending
                     print("\n...\nPotassium.")
-                    print("UNREALITY ENDING UNLOCKED ")
+                    print("UNREAL ENDING UNLOCKED ")
                     break  # End the game
 
                 # Continue game if not a secret ending
