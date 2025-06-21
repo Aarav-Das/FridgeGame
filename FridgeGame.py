@@ -1,3 +1,8 @@
+# You can read the comments, if you want some better understanding of how this functions along the way.
+"""
+However, it should also be mentioned...
+there are some easter eggs that are going to be spoiled here :)
+"""
 # Starting calorie count
 calories = 2000
 
@@ -65,13 +70,13 @@ while True:
                 elif item == 'dog':
                     print("\n...")
                     print("The dog ate YOU instead.")
-                    print("CONFUSION ENDING UNLOCKED 🌀")
+                    print("CONFUSION ENDING UNLOCKED ")
                     break  # End game
 
                 elif item == 'definitely not a fake banana':
                     print("\n...\nPotassium.")
-                    print("UNREALITY ENDING UNLOCKED 🍌")
-                    break  # End game
+                    print("UNREALITY ENDING UNLOCKED ")
+                    break  # End the game
 
                 # Continue game if not a secret ending
                 print(f"Items left in the fridge: {', '.join(fridge) if fridge else 'Empty.'}")
